@@ -1,6 +1,7 @@
 package com.tonikorin.cordova.plugin.autostart;
  
 import android.content.Intent;
+import android.app.IntentService;//Eu(Daniel) adicionei isto
 import android.content.pm.PackageManager;
 import android.content.ComponentName;
 import android.content.Context;
