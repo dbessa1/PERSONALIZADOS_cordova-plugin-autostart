@@ -39,7 +39,15 @@ public class AppStarter {
 	          if (onAutostart) {
               serviceIntent.putExtra("cordova_autostart", true);
             }
-            context.startActivity(serviceIntent);
+            //context.startActivity(serviceIntent);//cancei porque esta abrindo o app de maneira não ideal
+		
+		//--INICIO-------MANEIRA MELHOR DE ABRIR O APP--------
+              //String  packageN = "com.grantec.filhorapido";
+		 String packageN = context.getPackageName();
+                Intent i = context.getPackageManager().getLaunchIntentForPackage(packageN);
+                i.addCategory(Intent.CATEGORY_LAUNCHER);
+                context.startActivity(i);
+		//--FIM-------MANEIRA MELHOR DE ABRIR O APP--------
         }
     }
 }
